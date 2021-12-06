@@ -1,6 +1,7 @@
 package com.hpe.recipeapp.presentation.ui.recipe_list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
-import com.hpe.recipeapp.R
+import com.hpe.recipeapp.util.TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,8 +26,6 @@ class RecipeListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("RecipeListFragment: ${viewModel.getRepo()}")
-        println("RecipeListFragment: ${viewModel.getToken()}")
     }
 
     override fun onCreateView(
@@ -37,6 +35,13 @@ class RecipeListFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
+
+                val recipes = viewModel.recipes.value
+
+                for (recipe in recipes) {
+                    Log.d(TAG, "onCreateView: ${recipe.title}")
+                }
+
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = "RecipeList",
@@ -47,10 +52,10 @@ class RecipeListFragment : Fragment() {
                     Spacer(modifier = Modifier.padding(10.dp))
                     Button(
                         onClick = {
-                            findNavController().navigate(R.id.viewRecipe)
+                            viewModel.newSearch()
                         }
                     ) {
-                        Text(text = "TO RECIPE FRAGMENT")
+                        Text(text = "PERFORM SEARCH")
                     }
                 }
             }
