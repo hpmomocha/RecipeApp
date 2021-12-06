@@ -2,8 +2,10 @@ package com.hpe.recipeapp.network.model
 
 import com.hpe.recipeapp.domain.model.Recipe
 import com.hpe.recipeapp.domain.util.DomainMapper
+import javax.inject.Inject
 
-class RecipeDtoMapper : DomainMapper<RecipeDto, Recipe> {
+class RecipeDtoMapper
+    @Inject constructor() : DomainMapper<RecipeDto, Recipe> {
     override fun mapToDomainModel(entity: RecipeDto): Recipe {
         return Recipe(
             id = entity.pk,
