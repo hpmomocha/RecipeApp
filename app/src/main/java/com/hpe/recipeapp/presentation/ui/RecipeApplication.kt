@@ -1,4 +1,4 @@
-package com.hpe.recipeapp
+package com.hpe.recipeapp.presentation.ui
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

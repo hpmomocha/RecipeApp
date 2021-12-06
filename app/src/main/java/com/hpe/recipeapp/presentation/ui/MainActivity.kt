@@ -1,7 +1,8 @@
-package com.hpe.recipeapp
+package com.hpe.recipeapp.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.hpe.recipeapp.R
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

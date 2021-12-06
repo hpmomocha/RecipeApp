@@ -1,7 +1,7 @@
 package com.hpe.recipeapp.di
 
 import android.content.Context
-import com.hpe.recipeapp.RecipeApplication
+import com.hpe.recipeapp.presentation.ui.RecipeApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,5 +17,11 @@ object AppModule {
     @Provides
     fun provideApplication(@ApplicationContext app: Context): RecipeApplication {
         return app as RecipeApplication
+    }
+
+    @Singleton
+    @Provides
+    fun provideRandomString(): String {
+        return "Hello, this is a RANDOM string."
     }
 }

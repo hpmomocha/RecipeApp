@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/recipeListFragment"
-        android:name="com.hpe.recipeapp.RecipeListFragment"
+        android:name="com.hpe.recipeapp.presentation.ui.recipe_list.RecipeListFragment"
         android:label="RecipeListFragment" >
         <action
             android:id="@+id/viewRecipe"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.hpe.recipeapp.RecipeFragment"
+        android:name="com.hpe.recipeapp.presentation.ui.recipe.RecipeFragment"
         android:label="RecipeFragment" />
 </navigation>
