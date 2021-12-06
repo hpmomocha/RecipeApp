@@ -1,12 +1,12 @@
 package com.hpe.recipeapp.network.response
 
 import com.google.gson.annotations.SerializedName
-import com.hpe.recipeapp.network.model.RecipeNetworkEntity
+import com.hpe.recipeapp.network.model.RecipeDto
 
-class RecipeSearchResponse(
+data class RecipeSearchResponse(
     @SerializedName("count")
     var count: Int,
 
     @SerializedName("recipes")
-    var recipes: List<RecipeNetworkEntity>
+    var recipes: List<RecipeDto>
 )
