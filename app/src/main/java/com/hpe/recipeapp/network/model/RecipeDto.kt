@@ -13,7 +13,8 @@ data class RecipeDto(
     @SerializedName("publisher")
     var publisher: String? = null,
 
-    @SerializedName("featured_image")
+//    @SerializedName("featured_image")
+    @SerializedName("imageUrl")
     var featuredImage: String? = null,
 
     @SerializedName("rating")
